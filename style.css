@@ -5,4 +5,43 @@
 .info .image{
     width: 150px;
     height: 150px;
+    border-radius: 5%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-text-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.image-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
