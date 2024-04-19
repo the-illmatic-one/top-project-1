@@ -3,7 +3,16 @@ body {
     flex-direction: column;
     justify-content: space-between;
     /* gap: 100px; */
-    height: 100vh;;
+    height: 100vh;
+    margin: 0;
+}
+
+body > div { /* > means Child. Different from Descendant (space)*/
+    flex-grow: 1;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 h1, h2, h3 {
@@ -15,8 +24,8 @@ h1, h2, h3 {
 }
 
 .info .image{
-    width: 150px;
-    height: 150px;
+    max-width: 150px;
+    aspect-ratio: 1/1;
     border-radius: 5%;
 }
 
@@ -24,6 +33,8 @@ h1, h2, h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .footer {
@@ -41,33 +52,63 @@ ul {
     margin: 0;
 }
 
+.about {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .info {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 20px;
 }
 
 .image-text-container {
     display: flex;
     justify-content: center;
+    flex-shrink: 1;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .image-text {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex-direction: column;
 }
+
+.image-text .image {
+    flex-basis: auto;
+    flex-shrink: 1;
+}
+
+.description {
+    text-align: center;
+}
+
 
 .quote {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-left: 10%;
-    padding-right: 10%;
-    align-self: stretch;
+    min-height: 150px;
+}
+
+.quote > * {
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .author {
@@ -81,17 +122,114 @@ p {
 }
 
 
-body .info, body .sign-up-container, body .quote {
+body .sign-up-container, body .quote {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-.sign-up-window {
-    padding: 5% 10%;
-    margin: 3% 8%;
-    max-height: 100px;
+body .info {
+    padding-top: 3%;
+    padding-bottom: 5%;
 }
 
+.sign-up-window {
+    padding: 5% 10%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    max-height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sign-up-window > * {
+    flex-grow: 1;
+}
+
+.sign-up-window > button {
+    flex-grow: 0;
+    flex-basis: 1;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+/* STYLING FONTS AND BG COLOURS */
+
 * {
-    outline: 1px solid black
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header,.footer,.about{
+    background-color: #1f2937;
+}
+
+.about h1 {
+    font-size: 48px;
+    color: #f9faf8;
+    font-weight: 700;
+}
+
+.about p, .header ul{
+    font-size: 18px;
+    color: #e5e7eb;
+}
+
+.title {
+    font-size: 24px;
+    color: #f9faf8;
+}
+
+.about button {
+    border-radius: 5px;
+    color: #e5e7eb;
+    border-style: none;
+    padding: 2px 10px;
+    align-self: flex-start; /*stops the button from filling the div width*/
+}
+
+.info h2 {
+    font-size: 36px;
+    color: #1f2397;
+}
+
+.quote {
+    background-color: #e5e7eb;
+}
+
+.quote p{
+    font-size: 36px;
+    font-style: italic;
+    color: #1f2397;
+}
+
+.quote .author{ /*specify .quote since .quote p has higher precedence*/
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.about button
+,.sign-up-container button
+{
+    background-color: #3882f6;
+    border-style: 2px solid;
+    border-color: #e5e7eb;
+    border-radius: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.sign-up-container button
+,.sign-up-window {
+    color: #e5e7eb;
+    background-color: #3882f6;
+}
+
+
+.footer {
+    color: #e5e7eb;
 }
